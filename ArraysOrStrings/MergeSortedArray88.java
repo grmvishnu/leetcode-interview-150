@@ -1,11 +1,15 @@
 package ArraysOrStrings;
 
 import java.util.*;
+
 public class MergeSortedArray88 {
-    /* Brute Force solution that I could think of at first glance
-       Intuition : Creating a third array and looping through two arrays to insert elements in increasing order into third array. Writing the sorted elements back from third array to input array.
-       Time Complexity : O((m + n))
-       Space Complexity : O((m + n)) */
+    /*
+    Brute Force that I could think of at first glance
+    Intuition : Creating a third array and looping through two arrays to insert elements in increasing order into third
+                array. Writing the sorted elements back from third array to input array.
+    Time Complexity : O((m + n))
+    Space Complexity : O((m + n))
+    */
     public static void mergeSol1(int[] nums1, int m, int[] nums2, int n) {
         int[] nums3 = new int[m + n];
         int left = 0;
@@ -37,11 +41,13 @@ public class MergeSortedArray88 {
         }
     }
 
-    /* Better solution - Optimizing Space and Time, compared to Brute Force
-       Intuition : Avoid using extra space by replacing all the (nums1.length - m) elements in nums1 with elements in nums2, and then using Arrays.sort() to sort the array.
-       Time Complexity - O((m + n) log(m + n))
-       Space Complexity - O(log(m + n)) */
-
+    /*
+    Better Solution - Optimizing Space and Time, compared to Brute Force
+    Intuition : Avoid using extra space by replacing all the (nums1.length - m) elements in nums1 with elements in
+                nums2, and then using Arrays.sort() to sort the array.
+    Time Complexity : O((m + n) log(m + n))
+    Space Complexity : O(log(m + n))
+    */
     public static void mergeSol2(int[] nums1, int m, int[] nums2, int n) {
         int j = Math.max(m, 0);
 
@@ -52,11 +58,13 @@ public class MergeSortedArray88 {
         Arrays.sort(nums1);
     }
 
-    /* Best and Optimal solution - Two Pointer Approach
-       Intuition : Merging nums2 into nums1 from the back, placing the largest elements at the end to avoid overwriting elements in nums1.
-       Time Complexity - O(m + n)
-       Space Complexity - O(1) */
-
+    /*
+    Best and Optimal Solution - Two Pointer Approach
+    Intuition : Merging nums2 into nums1 from the back, placing the largest elements at the end to avoid overwriting
+                elements in nums1.
+    Time Complexity : O(m + n)
+    Space Complexity : O(1)
+    */
     public static void mergeSol3(int[] nums1, int m, int[] nums2, int n) {
         int mIndex = m - 1;
         int nIndex = n - 1;
