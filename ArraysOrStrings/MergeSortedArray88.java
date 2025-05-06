@@ -59,7 +59,7 @@ public class MergeSortedArray88 {
     }
 
     /*
-    Best and Optimal Solution - Two Pointer Approach
+    Optimal Solution - Two Pointer Approach
     Intuition : Merging nums2 into nums1 from the back, placing the largest elements at the end to avoid overwriting
                 elements in nums1.
     Time Complexity : O(m + n)
