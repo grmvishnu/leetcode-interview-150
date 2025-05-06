@@ -28,7 +28,7 @@ public class RemoveDuplicates26 {
     }
 
     /*
-    Optimal Solution 1 - Linear Approach
+    Optimal Solution - Linear Approach
     Intuition : Iterate through the sorted array, and whenever a new unique element is found (i.e., different from the
                 previous), place that element at the count index and increment count.
     Time Complexity : O(n)
